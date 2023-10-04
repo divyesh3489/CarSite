@@ -34,7 +34,8 @@ ALLOWED_HOSTS = [socket.gethostbyname(socket.gethostname()
 # Application definition
 
 INSTALLED_APPS = [
-    'Cardata.apps.CardataConfig',
+    'Cardata',
+    'user',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

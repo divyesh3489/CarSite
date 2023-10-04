@@ -31,7 +31,6 @@ def carform(request):
 def load_models(request):
     carbrand_id = request.GET.get('carbarnd_id')
     models = Carmodel.objects.filter(carbrand=carbrand_id)
-    print(models.values('id', 'carmodel'))
     return JsonResponse(list(models.values('id', 'carmodel')), safe=False)
 
 

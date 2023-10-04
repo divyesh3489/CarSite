@@ -123,6 +123,11 @@
                 {% endfor %}
             </select>
         </div>
+        
+        <div class="mb-4">
+            <label for="id_city" class="block text-gray-700 text-sm font-bold mb-2">City:</label>
+            {{form.city}}
+        </div>
         <div id="price" class="mb-4">
             <input type="button" value="Get Value" id="get_price"
                 class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded ">
@@ -204,5 +209,17 @@
             }
         }
     )
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVD8R6GhLSgcw6ZeZWoLvZN77SYBJgK_Q&libraries=places&callback=initap"></script>
+<script>
+    var input = document.getElementById('id_city');
+    var options = {
+            types: ['(cities)'],
+            componentRestrictions: { country: 'IN' }
+
+        };
+    console.log(options)
+    var autocomplete = new google.maps.places.Autocomplete(input,options);
+    console.log(autocomplete)
 </script>
 {% endblock %}
